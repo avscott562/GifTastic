@@ -1,0 +1,2 @@
+//Declare variables
+var topics = ["", "", "", ""];
