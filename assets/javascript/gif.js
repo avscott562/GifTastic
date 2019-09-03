@@ -25,7 +25,7 @@ topics.forEach(buttons);
   $(".comic").on("click", function() {
 
     //variable to hold api query
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + $(this).attr("data-name") + "&api_key=" + key + "&limit=15";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + $(this).attr("data-name") + "&api_key=" + key + "&limit=10";
 
     //pulling data fron the api
     $.ajax({
