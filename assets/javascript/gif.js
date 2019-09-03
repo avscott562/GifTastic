@@ -52,7 +52,7 @@ topics.forEach(buttons);
 
               //creating wrapper div
               var wrapper = $("<div>");
-              wrapper.addClass("gif-wrapper m-1");
+              wrapper.addClass("gif-wrapper mr-5 mb-5");
               wrapper.append(rating);
               
               //creating an image tag
@@ -62,7 +62,7 @@ topics.forEach(buttons);
               comicImage.attr("src", imageUrl);
               comicImage.addClass("comic-image");
               comicImage.attr("alt", $(this)[0].innerText);
-              wrapper.append(comicImage);
+              wrapper.prepend(comicImage);
 
               //dispaying image on screen
               $("#giphs").append(wrapper);
