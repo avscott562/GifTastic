@@ -1,6 +1,6 @@
 //Declare variables
 //list of comedians
-var topics = ["Adam Sandler", "Amy Schumar", "Bernie Mac", "Bill Maher", "Carol Burnett", "Carrot Top", "Cedric The Entertainer", 
+var topics = ["Adam Sandler", "Amy Schumar", "Bernie Mac", "Bill Maher", "Carol Burnett", "Cedric The Entertainer", 
 "Chevy Chase", "Chris Farley", "Chris Tucker", "Damon Wayans", "Eddie Murphy", "Ellen DeGeneres", "George Carlin", "Gilda Radner", 
 "Howie Mandel", "Jerry Seinfeld", "Jim Carrey", "John Belushi", "John Leguizamo", "Leslie Jones", "Lucille Ball", "Kevin Hart", 
 "Martin Lawrence", "Mike Epps", "Richard Pryor", "Robin Williams", "Sarah Silvermann", "Steve Harvey", "Steve Martin", "Whoopie Goldberg"];
@@ -26,7 +26,7 @@ function buttons(comic) {
 }
 
 //add click event to the buttons
-$(".comic").on("click", function() {
+$(document).on("click", ".comic", function() {
   var alt = $(this).attr("data-name");
 
   //variable to hold api query
@@ -95,7 +95,7 @@ $(".comic").on("click", function() {
 });
 
 //add click event to each gif
-$(document).on("click", ".comic-image", function() {
+$(document).on("click", ".comic-image", function(event) {
   //get current state of gif
   var state = $(this).attr("data-state");
 
@@ -108,4 +108,17 @@ $(document).on("click", ".comic-image", function() {
     $(this).attr("src", $(this).attr("data-still"));
     $(this).attr("data-state", "still");
   }
+});
+
+$('#submit').on("click", function() {
+   // prevent form from submitting
+   event.preventDefault();
+   //capture user entry
+  var newComic = $('#textbox').val().trim();
+  //add user entry to topics array
+  topics.push(newComic);
+  //clear out buttons div on screen
+  $('#buttons').empty();
+  //create new buttons and display on screen
+  topics.forEach(buttons);
 });
