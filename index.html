@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1>Comedians</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim pariatur est temporibus maxime aliquam totam nemo aperiam facere! Eaque minus dolore tenetur quia in porro aperiam suscipit quo quae consectetur!</p>
+        <p>Check out some gifs from some of your favorite comedians!</p>
     </header>
     <br>
     
@@ -19,10 +19,15 @@
     <div class="container">
         <div class="row">
             <div id="giphs" class="col-9"></div>
-            <div id="form" class="col-3">test form
-                <form action="input">
-                    <input type="text">
-                    <input type="submit">
+            <div id="form" class="col-3">
+                <form action="input" method="">
+                    <div class="form-group">
+                        <label for="textbox">Add a comedian!</label>
+                        <input type="text" class="form-control" id="textbox">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" id="submit" value="Submit">
+                    </div>
                 </form>
             </div>
         </div>
